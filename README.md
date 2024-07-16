@@ -25,6 +25,11 @@ https://jolicode.com/blog/tag/elasticsearch
 https://jolicode.com/blog/elasticsearch-the-right-way-in-symfony
 
 
+https://www.elastic.co/guide/en/elasticsearch/reference/current/object.html
+описание типов
+https://elasticsearch-cn.github.io/guide/reference/mapping/object-type.html
+https://elasticsearch-cn.github.io/guide/reference/mapping/routing-field.html
+
 
 # Symfony Docker
 
