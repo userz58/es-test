@@ -1,0 +1,25 @@
+settings:
+    number_of_replicas: 0
+    number_of_shards: 1
+    refresh_interval: 60s
+mappings:
+    dynamic: false
+    properties:
+        code:
+            type: keyword
+        name:
+            type: text
+            analyzer: english
+            fields:
+                autocomplete:
+                    type: text
+                    analyzer: app_autocomplete
+                    search_analyzer: standard
+        category:
+            type: object
+            properties:
+                name:
+                    type: text
+                    analyzer: english
+                slug:
+                    type: keyword

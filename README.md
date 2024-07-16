@@ -14,6 +14,17 @@ git push -u origin main
 
 
 
+composer req ruflin/elastica:^8.0
+
+https://www.youtube.com/watch?v=D0JApkNlTfQ&ab_channel=OfficialElasticCommunity
+https://www.geeksforgeeks.org/mapping-types-and-field-data-types-in-elasticsearch/
+
+https://jolicode.com/blog/tag/elastica
+https://jolicode.com/blog/tag/elasticsearch
+
+https://jolicode.com/blog/elasticsearch-the-right-way-in-symfony
+
+
 
 # Symfony Docker
 

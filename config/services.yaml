@@ -22,3 +22,21 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    JoliCode\Elastically\Transport\HttpClientTransport: ~
+    #JoliCode\Elastically\Messenger\IndexationRequestHandler: ~
+    JoliCode\Elastically\Client:
+        arguments:
+            $config:
+                host: '%env(ELASTICSEARCH_HOST)%'
+                port: '%env(ELASTICSEARCH_PORT)%'
+                transport: '@JoliCode\Elastically\Transport\HttpClientTransport'
+                elastically_mappings_directory: '%kernel.project_dir%/config/elastically'
+                elastically_index_class_mapping:
+                    product: App\Model\Elastically\Product
+                elastically_serializer: '@serializer'
+                elastically_bulk_size: 100
+            $logger: '@logger'
+
+    #JoliCode\Elastically\Messenger\DocumentExchangerInterface:
+    #    alias: App\Elasticsearch\DocumentExchanger
