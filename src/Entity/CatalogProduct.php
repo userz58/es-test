@@ -48,7 +48,7 @@ class CatalogProduct
     private Collection $categories;
 
     #[ORM\Column(type: 'boolean')]
-    private ?bool $isEnabled = true;
+    private bool $isEnabled = true;
 
     #[ORM\Column(type: 'json')]
     private array $values = [];
@@ -80,7 +80,7 @@ class CatalogProduct
         return $this->id;
     }
 
-    public function setId(?int $id): self
+    public function setId(?int $id): static
     {
         $this->id = $id;
 
@@ -92,7 +92,7 @@ class CatalogProduct
         return $this->code;
     }
 
-    public function setCode(?string $code): self
+    public function setCode(?string $code): static
     {
         $this->code = $code;
 
@@ -104,7 +104,7 @@ class CatalogProduct
         return $this->sku;
     }
 
-    public function setSku(?string $sku): self
+    public function setSku(?string $sku): static
     {
         $this->sku = $sku;
 
@@ -116,7 +116,7 @@ class CatalogProduct
         return $this->name;
     }
 
-    public function setName(?string $name): self
+    public function setName(?string $name): static
     {
         $this->name = $name;
 
@@ -128,7 +128,7 @@ class CatalogProduct
         return $this->image;
     }
 
-    public function setImage(?string $image): self
+    public function setImage(?string $image): static
     {
         $this->image = $image;
 
@@ -145,7 +145,7 @@ class CatalogProduct
         return $this->family;
     }
 
-    public function setFamily(?CatalogFamily $family): self
+    public function setFamily(?CatalogFamily $family): static
     {
         $this->family = $family;
 
@@ -157,7 +157,7 @@ class CatalogProduct
         return $this->parent;
     }
 
-    public function setParent(?string $parent): self
+    public function setParent(?string $parent): static
     {
         $this->parent = $parent;
 
@@ -169,7 +169,7 @@ class CatalogProduct
         return $this->categories;
     }
 
-    public function addCategory(CatalogCategory $category): self
+    public function addCategory(CatalogCategory $category): static
     {
         if (!$this->categories->contains($category)) {
             $this->categories->add($category);
@@ -178,7 +178,7 @@ class CatalogProduct
         return $this;
     }
 
-    public function removeCategory(CatalogCategory $category): self
+    public function removeCategory(CatalogCategory $category): static
     {
         $this->categories->removeElement($category);
 
@@ -202,7 +202,7 @@ class CatalogProduct
         return $selected;
     }
 
-    public function setValues(array $values): self
+    public function setValues(array $values): static
     {
         $this->values = $values;
 
@@ -214,7 +214,7 @@ class CatalogProduct
         return $this->associations;
     }
 
-    public function setAssociations(array $associations): self
+    public function setAssociations(array $associations): static
     {
         $this->associations = $associations;
 
@@ -226,7 +226,7 @@ class CatalogProduct
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
 
@@ -238,7 +238,7 @@ class CatalogProduct
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
     {
         $this->updatedAt = $updatedAt;
 
@@ -250,7 +250,7 @@ class CatalogProduct
         return $this->slug;
     }
 
-    public function setSlug(?string $slug): self
+    public function setSlug(?string $slug): static
     {
         $this->slug = $slug;
 
@@ -262,7 +262,7 @@ class CatalogProduct
         return $this->isEnabled;
     }
 
-    public function setEnable(bool $enabled): self
+    public function setEnable(bool $enabled): static
     {
         $this->isEnabled = $enabled;
 

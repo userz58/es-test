@@ -5,8 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55336d0c-8a69-4de3-9fda-7135e0426c08" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Builder/Search/ProductModelBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Command/TestIndexCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/TestCategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Tag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/CategoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/TagAwareInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/TagInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/CategoryRepositoryInterface.php-DELETE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/TagRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Twig/Extension/StrRepeatExtension.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Twig/Runtime/StrRepeatRuntime.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/test_category/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/test_category/printTree.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/elastically/product_mapping.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/elastically/product_mapping.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/CatalogAttribute.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CatalogAttribute.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/CatalogCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CatalogCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/CatalogProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CatalogProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Elastically/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Elastically/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Elastically/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Elastically/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CatalogProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CatalogProductRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,9 +196,9 @@
       <path value="$PROJECT_DIR$/vendor/jolicode/elastically" />
     </include_path>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2jIZMFO5Bx95VXIdqVMrss4VC5e" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -186,22 +207,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/es-test/config/elastically",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/es-test/templates/test_category&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
     <layout>
       <window_info id="Space Code Reviews" />
@@ -218,17 +244,19 @@
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Problems View" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.32781863" />
-      <window_info anchor="bottom" id="Services" order="4" />
+      <window_info anchor="bottom" id="Problems View" order="1" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.32781863" />
+      <window_info anchor="bottom" id="Services" order="3" />
+      <window_info anchor="right" id="Hierarchy" weight="0.32975262" />
       <window_info anchor="right" id="make" side_tool="true" />
       <window_info anchor="right" id="Meet New UI" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Notifications" order="0" weight="0.25" />
-      <window_info anchor="right" id="Database" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="1" weight="0.32975262" />
     </layout>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/test_category" />
       <recent name="$PROJECT_DIR$/config/elastically" />
     </key>
   </component>
@@ -246,7 +274,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721076503182</updated>
-      <workItem from="1721076509596" duration="10712000" />
+      <workItem from="1721076509596" duration="11097000" />
+      <workItem from="1721168417460" duration="21260000" />
+      <workItem from="1721499749136" duration="14742000" />
+      <workItem from="1721559509376" duration="1759000" />
     </task>
     <servers />
   </component>

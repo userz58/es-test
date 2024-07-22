@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Catalog\Repository\CatalogCategoryRepository;
+use App\Repository\CatalogCategoryRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -23,7 +23,7 @@ class CatalogCategory
     #[Gedmo\TreeParent]
     #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'children')]
     #[ORM\JoinColumn(name: 'parent_id', referencedColumnName: 'id', onDelete: 'CASCADE')]
-    private ?self $parent = null;
+    private self|null $parent = null;
 
     #[ORM\OneToMany(targetEntity: self::class, mappedBy: 'parent')]
     #[ORM\OrderBy(['left' => 'ASC'])]
@@ -70,6 +70,9 @@ class CatalogCategory
     #[ORM\Column(length: 255, unique: true)]
     private ?string $slug = null;
 
+    #[ORM\Column(type: 'boolean')]
+    private bool $isEnabled = true;
+
     #[ORM\Column]
     private array $values = [];
 
@@ -95,19 +98,19 @@ class CatalogCategory
         return $this->code;
     }
 
-    public function setCode(string $code): self
+    public function setCode(string $code): static
     {
         $this->code = $code;
 
         return $this;
     }
 
-    public function getParent(): ?self
+    public function getParent(): self|null
     {
         return $this->parent;
     }
 
-    public function setParent(?self $parent = null): self
+    public function setParent(self|null $parent = null): static
     {
         $this->parent = $parent;
 
@@ -122,7 +125,7 @@ class CatalogCategory
         return $this->children;
     }
 
-    public function addChild(self $child): self
+    public function addChild(self $child): static
     {
         if (!$this->children->contains($child)) {
             $this->children->add($child);
@@ -132,7 +135,7 @@ class CatalogCategory
         return $this;
     }
 
-    public function removeChild(self $child): self
+    public function removeChild(self $child): static
     {
         if ($this->children->removeElement($child)) {
             // set the owning side to null (unless already changed)
@@ -149,7 +152,7 @@ class CatalogCategory
         return count($this->getChildren()) > 0;
     }
 
-    public function setRoot(self $root): self
+    public function setRoot(self $root): static
     {
         $this->root = $root;
 
@@ -171,7 +174,7 @@ class CatalogCategory
         return $this->left;
     }
 
-    public function setLeft(int $left): self
+    public function setLeft(int $left): static
     {
         $this->left = $left;
 
@@ -183,7 +186,7 @@ class CatalogCategory
         return $this->right;
     }
 
-    public function setRight(int $right): self
+    public function setRight(int $right): static
     {
         $this->right = $right;
 
@@ -195,7 +198,7 @@ class CatalogCategory
         return $this->level;
     }
 
-    public function setLevel(int $level): self
+    public function setLevel(int $level): static
     {
         $this->level = $level;
 
@@ -217,7 +220,7 @@ class CatalogCategory
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(string $name): static
     {
         $this->name = $name;
 
@@ -229,7 +232,7 @@ class CatalogCategory
         return $this->url;
     }
 
-    public function setUrl(string $url): self
+    public function setUrl(string $url): static
     {
         $this->url = $url;
 
@@ -241,9 +244,21 @@ class CatalogCategory
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
+    public function setSlug(string $slug): static
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function isEnabled(): bool
+    {
+        return $this->isEnabled;
+    }
+
+    public function setEnable(bool $enabled): static
+    {
+        $this->isEnabled = $enabled;
 
         return $this;
     }
@@ -253,7 +268,7 @@ class CatalogCategory
         return $this->values;
     }
 
-    public function setValues(array $values): self
+    public function setValues(array $values): static
     {
         $this->values = $values;
 
@@ -268,7 +283,7 @@ class CatalogCategory
         return $this->products;
     }
 
-    public function addProduct(Product $product): self
+    public function addProduct(Product $product): static
     {
         if (!$this->products->contains($product)) {
             $this->products->add($product);
@@ -278,7 +293,7 @@ class CatalogCategory
         return $this;
     }
 
-    public function removeProduct(Product $product): self
+    public function removeProduct(Product $product): static
     {
         if ($this->products->removeElement($product)) {
             $product->removeCategory($this);

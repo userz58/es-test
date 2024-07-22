@@ -37,13 +37,13 @@ services:
   elasticsearch:
     image: elastic/elasticsearch:8.8.0
     environment:
+      ES_JAVA_OPTS: ${ES_JAVA_OPTS:--Xms512m -Xmx512m}
       #ES_JAVA_OPTS: ${ES_JAVA_OPTS:--Xms1g -Xmx1g}
-      ES_JAVA_OPTS: ${ES_JAVA_OPTS:--Xms512m -Xmx512m} # 512mo HEAP
+      #cluster.name: docker-cluster
       discovery.type: single-node
       xpack.security.enabled: false
       indices.id_field_data.enabled: true
       bootstrap.memory_lock: true
-      #cluster.name: docker-cluster
     ulimits:
       memlock:
         soft: -1
@@ -63,8 +63,7 @@ services:
     image: elastic/kibana:8.8.0
     restart: always
     environment:
-      #ELASTICSEARCH_HOSTS: http://elasticsearch:9200
-      ELASTICSEARCH_HOSTS: ${ELASTICSEARCH_HOST:-elasticsearch}:${ELASTICSEARCH_PORT:-9200}
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
     ports:
       - ${KIBANA_PORT:-5601}:5601 #- 5601:5601
     depends_on:

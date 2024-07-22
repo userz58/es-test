@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Catalog\Repository;
+namespace App\Repository;
 
 use App\Entity\CatalogProduct as Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
@@ -16,22 +16,10 @@ class CatalogProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-    public function save(Product $entity, bool $flush = false): void
+
+    public function iterareAll(): iterable
     {
-        $this->getEntityManager()->persist($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
-
-    public function remove(Product $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
+        return $this->createQueryBuilder('p')->getQuery()->toIterable();
     }
 
     protected function getRootAlias(QueryBuilder $queryBuilder): string

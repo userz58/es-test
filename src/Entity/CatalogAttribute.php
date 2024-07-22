@@ -47,7 +47,16 @@ class CatalogAttribute
     private bool $scopable = false;
 
     #[ORM\Column(type: Types::BOOLEAN, options: ["default" => false])]
-    private bool $wysiwyg_enabled = false;
+    private bool $wysiwygEnabled = false;
+
+    #[ORM\Column(length: 32, nullable: true)]
+    private string|null $elasticSearchType = null;
+
+    #[ORM\Column]
+    private bool $elasticSearchDisabled = false;
+
+    #[ORM\Column]
+    private bool $elasticSearchNotAnalized = false;
 
     public function __toString(): string
     {
@@ -169,12 +178,48 @@ class CatalogAttribute
 
     public function isWysiwygEnabled(): bool
     {
-        return $this->wysiwyg_enabled;
+        return $this->wysiwygEnabled;
     }
 
-    public function setWysiwygEnabled(bool $wysiwyg_enabled): self
+    public function setWysiwygEnabled(bool $enabled): self
     {
-        $this->wysiwyg_enabled = $wysiwyg_enabled;
+        $this->wysiwygEnabled = $enabled;
+
+        return $this;
+    }
+
+    public function isElasticSearchDisabled(): bool
+    {
+        return $this->elasticSearchDisabled;
+    }
+
+    public function setElasticSearchDisabled(bool $disabled = true): static
+    {
+        $this->elasticSearchDisabled = $disabled;
+
+        return $this;
+    }
+
+    public function IsElasticSearchNotAnalized(): bool
+    {
+        return $this->elasticSearchNotAnalized;
+    }
+
+    public function setElasticSearchNotAnalized(bool $notAnalized = true): static
+    {
+        $this->elasticSearchNotAnalized = $notAnalized;
+
+        return $this;
+    }
+
+    public function getElasticSearchType(): string|null
+    {
+        return $this->elasticSearchType;
+    }
+
+    public function setElasticSearchType(string|null $type): static
+    {
+        $this->elasticSearchType = $type;
 
         return $this;
     }

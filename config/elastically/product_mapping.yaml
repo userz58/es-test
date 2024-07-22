@@ -7,14 +7,29 @@ mappings:
     properties:
         code:
             type: keyword
+        sku:
+            type: keyword
         name:
             type: text
-            analyzer: english
+            #analyzer: english
             fields:
                 autocomplete:
                     type: text
                     analyzer: app_autocomplete
                     search_analyzer: standard
+        enabled:
+            type: boolean
+        createdAt:
+            type: date
+        updatedAt:
+            type: date
+        image:
+            #type: keyword
+            enabled: false
+        parent:
+            type: keyword
+        slugs:
+            type: keyword
         category:
             type: object
             properties:
@@ -23,3 +38,32 @@ mappings:
                     analyzer: english
                 slug:
                     type: keyword
+                enabled:
+                    type: boolean
+                id:
+                    type: keyword
+                parent:
+                    type: keyword
+                tree:
+                    type: keyword
+                left:
+                    type: integer
+                right:
+                    type: integer
+                level:
+                    type: integer
+        values:
+            type: object
+            properties:
+                #name:
+                #    type: text
+                picture:
+                    #type: keyword
+                    enabled: false
+                power_requirements:
+                    type: keyword
+                associations:
+                    enabled: false
+                #field_1:
+                #    type: string
+

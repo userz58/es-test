@@ -13,8 +13,15 @@ git branch -M main
 git push -u origin main
 
 
+DOCTRINE
+Iterating Large Results for Data-Processing
+https://www.doctrine-project.org/projects/doctrine-orm/en/3.2/reference/batch-processing.html
+
 
 composer req ruflin/elastica:^8.0
+
+mapping
+https://www.youtube.com/watch?v=FQAHDrVwfok
 
 https://www.youtube.com/watch?v=D0JApkNlTfQ&ab_channel=OfficialElasticCommunity
 https://www.geeksforgeeks.org/mapping-types-and-field-data-types-in-elasticsearch/
@@ -27,6 +34,8 @@ https://jolicode.com/blog/elasticsearch-the-right-way-in-symfony
 
 https://www.elastic.co/guide/en/elasticsearch/reference/current/object.html
 описание типов
+https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html
+https://www.elastic.co/guide/en/elasticsearch/reference/current/number.html
 https://elasticsearch-cn.github.io/guide/reference/mapping/object-type.html
 https://elasticsearch-cn.github.io/guide/reference/mapping/routing-field.html
 

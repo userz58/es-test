@@ -1,0 +1,105 @@
+<?php
+
+namespace Akeneo-temp;
+
+use App\Model\CategoryInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Persistence\ObjectRepository;
+use Gedmo\Tree\RepositoryInterface as TreeRepositoryInterface;
+
+/**
+ * Category repository interface
+ */
+interface CategoryRepositoryInterface extends TreeRepositoryInterface, ObjectRepository
+{
+    /**
+     * Get a collection of categories based on the array of id provided
+     */
+    public function getCategoriesByIds(array $categoryIds = []): Collection;
+
+    /**
+     * Get a collection of categories based on the array of code provided
+     */
+    public function getCategoriesByCodes(array $categoryCodes = []): Collection;
+
+    /**
+     * Get a tree filled with children and their parents
+     */
+    public function getTreeFromParents(array $parentsIds): array;
+
+    /**
+     * Shortcut to get all children ids
+     */
+    public function getAllChildrenIds(CategoryInterface $parent, bool $includeNode = false): array;
+
+    /**
+     * Shortcut to get all children codes
+     */
+    public function getAllChildrenCodes(CategoryInterface $parent, bool $includeNode = false): array;
+
+    /**
+     * Return the categories IDs from their codes. The categories are not hydrated.
+     */
+    public function getCategoryIdsByCodes(array $codes): array;
+
+    /**
+     * Get children from a parent id
+     *
+     * @param int $parentId
+     *
+     * @return ArrayCollection
+     */
+    public function getChildrenByParentId($parentId);
+
+    public function getChildrenGrantedByParentId(CategoryInterface $parent, array $grantedCategoryIds = []): array;
+
+    /**
+     * Get children tree from a parent id.
+     * If the select node id is provided, the tree will be returned
+     * down to the node specified by select node id. Otherwise, the
+     * whole tree will be returned
+     */
+    public function getChildrenTreeByParentId(int $parentId, bool $selectNodeId = false, array $grantedCategoryIds = []): array;
+
+    /**
+     * Based on the Gedmo\Tree\RepositoryUtils\buildTreeArray, but with
+     * keeping the node as object and able to manage nodes in different branches
+     * (the original implementation works with only depth and associate all
+     * nodes of depth D+1 to the last node of depth D.)
+     *
+     * @param array $nodes Must be sorted by increasing depth
+     *
+     * @return array
+     */
+    public function buildTreeNode(array $nodes): array;
+
+    /**
+     * Get the Tree path of Nodes by given $node
+     */
+    public function getPath(object $node): array;
+
+    public function getTrees(): array;
+
+    /**
+     * Get trees of granted categories
+     */
+    public function getGrantedTrees(array $grantedCategoryIds = []): array;
+
+    /**
+     * Check if a parent node is an ancestor of a child node
+     */
+    public function isAncestor(CategoryInterface $parentNode, CategoryInterface $childNode): bool;
+
+    /**
+     * Return the categories sorted by tree and ordered
+     */
+    public function getOrderedAndSortedByTreeCategories(): array;
+
+    /**
+     * Provides a tree filled up to the categories provided, with all their ancestors
+     * and ancestors sibligns are filled too, in order to be able to display the tree
+     * directly without loading other data.
+     */
+    public function getFilledTree(CategoryInterface $root, Collection $categories): array;
+}
