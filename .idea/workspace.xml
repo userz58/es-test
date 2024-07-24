@@ -5,29 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55336d0c-8a69-4de3-9fda-7135e0426c08" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Builder/Search/ProductModelBuilder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Command/TestIndexCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/TestCategoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Tag.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/CategoryInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/TagAwareInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/TagInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/CategoryRepositoryInterface.php-DELETE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/TagRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Twig/Extension/StrRepeatExtension.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Twig/Runtime/StrRepeatRuntime.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/test_category/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/test_category/printTree.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/test_category/printCategory.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/elastically/product_mapping.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/elastically/product_mapping.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CatalogAttribute.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CatalogAttribute.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CatalogCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CatalogCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CatalogProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CatalogProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Elastically/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Elastically/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Elastically/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Elastically/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CatalogProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CatalogProductRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TestCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TestCategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/test_category/printTree.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test_category/printTree.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +259,7 @@
       <workItem from="1721076509596" duration="11097000" />
       <workItem from="1721168417460" duration="21260000" />
       <workItem from="1721499749136" duration="14742000" />
-      <workItem from="1721559509376" duration="1759000" />
+      <workItem from="1721559509376" duration="12098000" />
     </task>
     <servers />
   </component>

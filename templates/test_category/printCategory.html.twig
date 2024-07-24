@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Товары в категории{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1><a href="{{ path('app_test_print_tree', {id: category.parent.id}) }}">родитель - {{ category.parent.name }}</a></h1>
+
+    <h3>подкатегории</h3>
+    {% for category in category.children %}
+        <li class=""><a href="{{ path('app_test_print_category', {id: category.id}) }}">{{ str_repeat('-', category.level) }}&nbsp;{{ category.name|e }}</a></li>
+    {% endfor %}
+
+    <h3>товары ({{ category.products|length }})</h3>
+    <ul class="">
+        {% for product in category.products %}
+            <li class="">{{ product.sku }} {{ product.name|e }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr/>
+    <h2>elasticsearch ({{ products|length }})</h2>
+    {% for product in products %}
+        <li class="">{{ product.sku }} {{ product.name|e }}</li>
+    {% endfor %}
+</div>
+{% endblock %}

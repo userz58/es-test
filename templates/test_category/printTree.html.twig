@@ -13,7 +13,7 @@
 
     <ul class="">
         {% for category in children %}
-            <li class="">{{ str_repeat('-', category.level) }}&nbsp;{{ category.name|e }}</li>
+            <li class=""><a href="{{ path('app_test_print_category', {id: category.id}) }}">{{ str_repeat('-', category.level) }}&nbsp;{{ category.name|e }}</a> [{{ category.root.id }}] {{ category.left }} - {{ category.right }}</li>
         {% endfor %}
     </ul>
 </div>

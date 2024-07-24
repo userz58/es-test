@@ -30,8 +30,8 @@ mappings:
             type: keyword
         slugs:
             type: keyword
-        category:
-            type: object
+        categories:
+            type: nested
             properties:
                 name:
                     type: text
@@ -44,7 +44,7 @@ mappings:
                     type: keyword
                 parent:
                     type: keyword
-                tree:
+                root:
                     type: keyword
                 left:
                     type: integer
